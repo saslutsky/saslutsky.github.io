@@ -11,22 +11,51 @@
       <meta name="keywords" content = "USCF", "Ratings", "Tracker">
       <meta name="author" content = "Simon Slutsky">
       <meta name="viewport" content= "width=device-width, initial-scale=1.0">
-      <base href="https://saslutsky.github.iom/" target="_blank">
-
+      <base href="https://saslutsky.github.io/" target="_blank">
+      
+      <script type="application/javascript">var USCF_ROOT_URL = "https://www.uschess.org/msa/MbrDtlMain.php?";
+      </script>
+      
+      <!-- TEST -->
+      <script type="application/javacscript">
+	function test()
+	{
+	if (document.QueryForm.numbquery != "12345678"){
+	alert ("POOP!!");
+	return document.QueryForm.numbquery;
+	}
+	return false;
+	}
+      </script>
+      
+      <!-- Return current USCF Regular Rating for an input ID
+	   <script type="application/javascript">
+	     function fetchRating(ID)
+	     {
+	     
+	     }
+	     
+	   </script>
+	   -->
+      
    </head>
-
-<body>
-
-  <h1> USCF Player Tracker </h1>
-  <p> This will soon be a useful USCF Player Tracker! <p>
-
-    <input type="text" name="namequery" id="namequery" autocomplete="off" placeholder=" Search by Name" style='font-size: 10pt;' />
-    <!--   <input type="number" name="numquery" id="numquery" autocomplete="off" placeholder=" Search by ID#" style='font-size: 10pt;' min="10000000" max="10000000000" />
-     Uses annoying slider arrows that obscure the placeholder text and will screw up the functionality -->
-    <input type="text" name="numbquery" id="numbquery" autocomplete="off" placeholder=" Search by ID#" style='font-size: 10pt;' />
-  
-    <input type = "submit" value = "Find Rating" />
-
-</body> 
-
+   
+   <body>
+     
+     <h1> USCF Player Tracker </h1>
+     <p> This will soon be a useful USCF Player Tracker! <p>
+       
+       <form name="QueryForm" onsubmit="return(test());">
+	 
+	 <input type="text" name="namequery" id="namequery" autocomplete="off" placeholder=" Search by Name" style='font-size: 10pt;' />
+	 <!--   <input type="number" name="numquery" id="numquery" autocomplete="off" placeholder=" Search by ID#" style='font-size: 10pt;' min="10000000" max="10000000000" />
+		Uses annoying slider arrows that obscure the placeholder text and will screw up the functionality -->
+	 <input type="text" name="numbquery" id="numbquery" autocomplete="off" placeholder=" Search by ID#" style='font-size: 10pt;' />
+	 
+	 <input type="submit" value="Find Rating" />
+	 
+       </form>
+       
+   </body> 
+   
 </html>
