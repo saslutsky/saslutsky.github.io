@@ -1,4 +1,6 @@
 #SS 07/18/2020
+#USCFCurrentRatingsScraper
+#Scrapes current ratings page and dumps to pd.dataframe
 
 import requests
 from bs4 import BeautifulSoup
@@ -42,9 +44,10 @@ def fetchCurrentRatings(idNum):
         if (len(rcolumns) > 1):
             print (rcolumns[1].get_text())
             for ind in current_df.index:
-                if (rcolumns[0].get_text(strip=True) == ind + " Rating"):
-                    print ("W00t")
-                    current_df.at[ind, "Rating"] = rcolumns[1].get_text(strip=True)
+                #Identify Rows with the desired ratings by matching name of rating
+                if (rcolumns[0].get_text(strip=True) == ind + " Rating"): 
+                    #print ("W00t")
+                    current_df.at[ind, "Rating"] = rcolumns[1].get_text(strip=True) #Store the rating in it's matching df row
 
     print (current_df)
 
